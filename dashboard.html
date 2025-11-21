@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sales System Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="header-brand">
+                    <h1>Sales System Pro</h1>
+                    <span class="user-plan free">FREE</span>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="user-info">
+                        <span id="company-name" class="company-name"></span>
+                        <span id="user-name" class="user-name"></span>
+                    </div>
+                    <button onclick="logout()" class="btn btn-outline btn-sm">
+                        <i>🚪</i> Sair
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Sidebar -->
+            <nav class="sidebar">
+                <div class="sidebar-menu">
+                    <a href="#dashboard" class="menu-item active" data-page="dashboard">
+                        <i>📊</i> Dashboard
+                    </a>
+                    <a href="#vendas" class="menu-item" data-page="sales">
+                        <i>💰</i> Vendas
+                    </a>
+                    <a href="#metas" class="menu-item" data-page="goals">
+                        <i>🎯</i> Metas
+                    </a>
+                    <a href="#relatorios" class="menu-item" data-page="reports">
+                        <i>📈</i> Relatórios
+                    </a>
+                    <a href="#configuracoes" class="menu-item" data-page="settings">
+                        <i>⚙️</i> Configurações
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Dashboard Page -->
+                <div id="dashboard-page" class="page active">
+                    <div class="page-header">
+                        <h2>Dashboard</h2>
+                        <div class="page-actions">
+                            <select id="month-select" class="select">
+                                <option value="0">Janeiro</option>
+                                <option value="1">Fevereiro</option>
+                                <option value="2">Março</option>
+                                <option value="3">Abril</option>
+                                <option value="4">Maio</option>
+                                <option value="5">Junho</option>
+                                <option value="6">Julho</option>
+                                <option value="7">Agosto</option>
+                                <option value="8">Setembro</option>
+                                <option value="9">Outubro</option>
+                                <option value="10">Novembro</option>
+                                <option value="11">Dezembro</option>
+                            </select>
+                            <select id="year-select" class="select">
+                                <!-- Years will be populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Summary Cards -->
+                    <div class="summary-cards">
+                        <div class="summary-card">
+                            <div class="card-icon sales">💰</div>
+                            <div class="card-content">
+                                <h3>Total Vendido</h3>
+                                <p id="total-sold" class="card-value">R$ 0,00</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-icon returns">🔄</div>
+                            <div class="card-content">
+                                <h3>Devoluções</h3>
+                                <p id="total-returns" class="card-value">R$ 0,00</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-icon net">💲</div>
+                            <div class="card-content">
+                                <h3>Valor Líquido</h3>
+                                <p id="net-amount" class="card-value">R$ 0,00</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-icon goal">🎯</div>
+                            <div class="card-content">
+                                <h3>Meta Mensal</h3>
+                                <p id="monthly-goal-display" class="card-value">R$ 0,00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <h3>Progresso da Meta</h3>
+                            <canvas id="progress-chart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Vendas Diárias</h3>
+                            <canvas id="sales-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Recent Sales -->
+                    <div class="recent-sales">
+                        <h3>Vendas Recentes</h3>
+                        <div id="recent-sales-list" class="sales-list">
+                            <!-- Sales will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sales Page -->
+                <div id="sales-page" class="page">
+                    <!-- Sales content will be loaded here -->
+                </div>
+
+                <!-- Other pages will be loaded dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="js/sales.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

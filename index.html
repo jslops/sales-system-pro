@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales System Pro - Sistema de Vendas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div id="app">
+        <!-- Landing Page -->
+        <div id="landing-page" class="landing-container">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <h1>Sales System Pro</h1>
+                    <span class="badge">FREE</span>
+                </div>
+                <div class="nav-actions">
+                    <button onclick="showLogin()" class="btn btn-outline">Entrar</button>
+                    <button onclick="showRegister()" class="btn btn-primary">Cadastrar</button>
+                </div>
+            </nav>
+
+            <main class="hero">
+                <div class="hero-content">
+                    <h1>Gestão de Vendas Profissional</h1>
+                    <p class="hero-subtitle">Sistema completo para controle de vendas, metas e relatórios. 100% gratuito e online.</p>
+                    
+                    <div class="hero-features">
+                        <div class="feature">
+                            <span class="feature-icon">📊</span>
+                            <h3>Relatórios Avançados</h3>
+                            <p>Gráficos e métricas em tempo real</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🎯</span>
+                            <h3>Controle de Metas</h3>
+                            <p>Acompanhe performance da equipe</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">☁️</span>
+                            <h3>Dados na Nuvem</h3>
+                            <p>Acesse de qualquer dispositivo</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <button onclick="showRegister()" class="btn btn-primary btn-large">
+                            Começar Agora - Grátis
+                        </button>
+                        <button onclick="showLogin()" class="btn btn-outline btn-large">
+                            Já tenho conta
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Login Modal -->
+        <div id="login-modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="modal-close" onclick="hideModals()">×</button>
+                <h2>Entrar no Sistema</h2>
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Entrar</button>
+                </form>
+                <p class="auth-switch">
+                    Não tem conta? <a href="#" onclick="showRegister()">Cadastre-se</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Register Modal -->
+        <div id="register-modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="modal-close" onclick="hideModals()">×</button>
+                <h2>Criar Conta</h2>
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label>Nome da Empresa</label>
+                        <input type="text" id="register-company" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Seu Nome</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" id="register-password" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Criar Conta</button>
+                </form>
+                <p class="auth-switch">
+                    Já tem conta? <a href="#" onclick="showLogin()">Faça login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
